@@ -1,6 +1,6 @@
 <template lang="jade">
 canvas(
-  class="vchart bar-chart",
+  class="vchart line-chart",
   v-el:chart-canvas,
   :width="width",
   :height="height"
@@ -62,22 +62,22 @@ export default {
   watch: {
     datasets: {
       handler(val, oldVal) {
-        this.barChart.data.datasets = val;
-        this.barChart.update();
+        this.lineChart.data.datasets = val;
+        this.lineChart.update();
       },
       deep: true
     }
   },
   data() {
     return {
-      barChart: null
+      lineChart: null
     };
   },
   ready() {
     const chartCanvas = this.$els.chartCanvas;
     const ctx = chartCanvas.getContext('2d');
-    this.barChart = new Chart(ctx, {
-      type: 'bar',
+    this.lineChart = new Chart(ctx, {
+      type: 'line',
       data: this.chartData,
       options: this.chartOptions
     });

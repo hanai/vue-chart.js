@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Bar Chart</title>
+  <title>Line Chart</title>
   <meta charset="utf-8">
   <script src="./scripts/vue.js"></script>
   <script src="./scripts/Chart.js"></script>
@@ -9,10 +9,10 @@
 </head>
 <body>
 <div id="app">
-  <bar-chart :width="600" :height="300" :responsive="false" :labels="labels" :datasets="datasets" :options="options"></bar-chart>
+  <line-chart :width="600" :height="300" :responsive="false" :labels="labels" :datasets="datasets" :options="options"></line-chart>
 </div>
 <script>
-  var BarChart = vchart.BarChart;
+  var LineChart = vchart.LineChart;
 
   new Vue({
     el: '#app',
@@ -58,7 +58,7 @@
       }
     },
     components: {
-      BarChart
+      LineChart
     },
     ready() {
       var self = this;

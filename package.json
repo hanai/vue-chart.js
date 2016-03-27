@@ -8,6 +8,7 @@
     "dist/vchart.js"
   ],
   "scripts": {
+    "build": "webpack --config build/webpack.base.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
