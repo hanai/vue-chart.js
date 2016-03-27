@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bar Chart</title>
+  <meta charset="utf-8">
+  <script src="./scripts/vue.js"></script>
+  <script src="./scripts/Chart.js"></script>
+  <script src="../dist/vchart.js"></script>
+</head>
+<body>
+<div id="app">
+  <bar-chart :width="600" :height="300" :labels="labels" :datasets="datasets" :options="options"></bar-chart>
+</div>
+<script>
+  var BarChart = vchart.BarChart;
+
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+          {
+            label: "My First dataset",
+
+            // The properties below allow an array to be specified to change the value of the item at the given index
+            // String  or array - the bar color
+            backgroundColor: "rgba(220,220,220,0.2)",
+
+            // String or array - bar stroke color
+            borderColor: "rgba(220,220,220,1)",
+
+            // Number or array - bar border width
+            borderWidth: 1,
+
+            // String or array - fill color when hovered
+            hoverBackgroundColor: "rgba(220,220,220,0.2)",
+
+            // String or array - border color when hovered
+            hoverBorderColor: "rgba(220,220,220,1)",
+
+            // The actual data
+            data: [65, 59, 80, 81, 56, 55, 40],
+
+            // String - If specified, binds the dataset to a certain y-axis. If not specified, the first y-axis is used.
+            yAxisID: "y-axis-0",
+          }, {
+            label: "My Second dataset",
+            backgroundColor: "rgba(220,220,220,0.2)",
+            borderColor: "rgba(220,220,220,1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(220,220,220,0.2)",
+            hoverBorderColor: "rgba(220,220,220,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+          }
+        ],
+        options: {}
+      }
+    },
+    components: {
+      BarChart
+    },
+    ready() {
+      var self = this;
+      setTimeout(function () {
+        self.datasets = [{
+          label: "My First dataset",
+
+          // The properties below allow an array to be specified to change the value of the item at the given index
+          // String  or array - the bar color
+          backgroundColor: "rgba(220,220,220,0.2)",
+
+          // String or array - bar stroke color
+          borderColor: "rgba(220,220,220,1)",
+
+          // Number or array - bar border width
+          borderWidth: 1,
+
+          // String or array - fill color when hovered
+          hoverBackgroundColor: "rgba(220,220,220,0.2)",
+
+          // String or array - border color when hovered
+          hoverBorderColor: "rgba(220,220,220,1)",
+
+          // The actual data
+          data: [65, 59, 50, 81, 56, 55, 40],
+
+          // String - If specified, binds the dataset to a certain y-axis. If not specified, the first y-axis is used.
+          yAxisID: "y-axis-0",
+        }, {
+            label: "My Second dataset",
+            backgroundColor: "rgba(220,220,220,0.2)",
+            borderColor: "rgba(220,220,220,1)",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(220,220,220,0.2)",
+            hoverBorderColor: "rgba(220,220,220,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+          }]
+      }, 4000);
+    }
+  });
+</script>
+</body>
+</html>
