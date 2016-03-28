@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <title>Pie Chart & Doughnut Chart</title>
+  <meta charset="utf-8">
+  <script src="./scripts/vue.js"></script>
+  <script src="./scripts/Chart.js"></script>
+  <script src="../dist/vchart.js"></script>
+</head>
+<body>
+<div id="app">
+  <pie-chart :labels="labels1" :datasets="datasets1" :options="options"></pie-chart>
+  <doughnut-chart :labels="labels2" :datasets="datasets2" :options="options"></doughnut-chart>
+</div>
+<script>
+  var PieChart = vchart.PieChart;
+  var DoughnutChart = vchart.DoughnutChart;
+
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        labels1: [
+          "Red",
+          "Green",
+          "Yellow"
+        ],
+        datasets1: [
+          {
+            data: [300, 50, 100],
+            backgroundColor: [
+              "#F7464A",
+              "#46BFBD",
+              "#FDB45C"
+            ],
+            hoverBackgroundColor: [
+              "#FF5A5E",
+              "#5AD3D1",
+              "#FFC870"
+            ]
+          }
+        ],
+        labels2: [
+          "Red",
+          "Green",
+          "Yellow"
+        ],
+        datasets2: [
+          {
+            data: [300, 50, 100],
+            backgroundColor: [
+              "#F7464A",
+              "#46BFBD",
+              "#FDB45C"
+            ],
+            hoverBackgroundColor: [
+              "#FF5A5E",
+              "#5AD3D1",
+              "#FFC870"
+            ]
+          }
+        ],
+        options: {}
+      }
+    },
+    components: {
+      PieChart,
+      DoughnutChart
+    }
+  });
+</script>
+</body>
+</html>
