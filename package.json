@@ -47,6 +47,8 @@
     "webpack": "^1.12.14"
   },
   "dependencies": {
-    "chart.js": "^1.0.2"
+  },
+  "peerDependencies": {
+    "chart.js": "^2.0.0"
   }
 }
