@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>Radar Chart</title>
+  <meta charset="utf-8">
+  <script src="./scripts/vue.js"></script>
+  <script src="./scripts/Chart.js"></script>
+  <script src="../dist/vchart.js"></script>
+</head>
+<body>
+<div id="app">
+  <radar-chart :labels="labels" :datasets="datasets" :options="options"></radar-chart>
+</div>
+<script>
+  var RadarChart = vchart.RadarChart;
+
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        datasets: [
+          {
+            label: "My First dataset",
+            backgroundColor: "rgba(220,220,220,0.2)",
+            borderColor: "rgba(220,220,220,1)",
+            pointBackgroundColor: "rgba(220,220,220,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            data: [65, 59, 90, 81, 56, 55, 40]
+          },
+          {
+            label: "My Second dataset",
+            backgroundColor: "rgba(151,187,205,0.2)",
+            borderColor: "rgba(151,187,205,1)",
+            pointBackgroundColor: "rgba(151,187,205,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 96, 27, 100]
+          }
+        ],
+        options: {}
+      }
+    },
+    components: {
+      RadarChart
+    }
+  });
+</script>
+</body>
+</html>
