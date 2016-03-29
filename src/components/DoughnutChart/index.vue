@@ -35,6 +35,9 @@ export default {
           });
         });
       },
+      coerce(val) {
+        return JSON.parse(JSON.stringify(val));
+      },
       default() { return []; }
     },
     options: {

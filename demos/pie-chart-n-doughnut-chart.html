@@ -9,8 +9,8 @@
 </head>
 <body>
 <div id="app">
-  <pie-chart :labels="labels1" :datasets="datasets1" :options="options"></pie-chart>
-  <doughnut-chart :labels="labels2" :datasets="datasets2" :options="options"></doughnut-chart>
+  <pie-chart :labels="labels" :datasets="datasets" :options="options"></pie-chart>
+  <doughnut-chart :labels="labels" :datasets="datasets" :options="options"></doughnut-chart>
 </div>
 <script>
   var PieChart = vchart.PieChart;
@@ -20,32 +20,12 @@
     el: '#app',
     data() {
       return {
-        labels1: [
+        labels: [
           "Red",
           "Green",
           "Yellow"
         ],
-        datasets1: [
-          {
-            data: [300, 50, 100],
-            backgroundColor: [
-              "#F7464A",
-              "#46BFBD",
-              "#FDB45C"
-            ],
-            hoverBackgroundColor: [
-              "#FF5A5E",
-              "#5AD3D1",
-              "#FFC870"
-            ]
-          }
-        ],
-        labels2: [
-          "Red",
-          "Green",
-          "Yellow"
-        ],
-        datasets2: [
+        datasets: [
           {
             data: [300, 50, 100],
             backgroundColor: [
