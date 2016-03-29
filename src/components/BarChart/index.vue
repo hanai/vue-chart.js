@@ -104,7 +104,8 @@ export default {
   },
   data() {
     return {
-      barChart: null
+      barChart: null,
+      chartType: 'bar'
     };
   },
   ready() {

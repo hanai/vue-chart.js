@@ -85,7 +85,8 @@ export default {
   },
   data() {
     return {
-      pieChart: null
+      pieChart: null,
+      chartType: 'pie'
     };
   },
   ready() {

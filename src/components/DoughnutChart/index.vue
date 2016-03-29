@@ -85,7 +85,8 @@ export default {
   },
   data() {
     return {
-      doughnutChart: null
+      doughnutChart: null,
+      chartType: 'doughnut'
     };
   },
   ready() {

@@ -84,7 +84,8 @@ export default {
   },
   data() {
     return {
-      lineChart: null
+      lineChart: null,
+      chartType: 'line'
     };
   },
   ready() {

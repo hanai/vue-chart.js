@@ -84,7 +84,8 @@ export default {
   },
   data() {
     return {
-      radarChart: null
+      radarChart: null,
+      chartType: 'radar'
     };
   },
   ready() {
