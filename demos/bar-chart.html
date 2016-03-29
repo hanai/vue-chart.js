@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="app">
-  <bar-chart :width="600" :height="300" :responsive="false" :labels="labels" :stacked="['y']" :datasets="datasets" :options="options"></bar-chart>
+  <bar-chart :width="600" :height="300" :responsive="false" :labels="labels" :legend="true" :stacked="['y']" :datasets="datasets" :options="options"></bar-chart>
 </div>
 <script>
   var BarChart = vchart.BarChart;
@@ -54,7 +54,8 @@
             data: [28, 48, 40, 19, 86, 27, 90]
           }
         ],
-        options: {}
+        options: {
+        }
       }
     },
     components: {

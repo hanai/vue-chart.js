@@ -10,6 +10,8 @@ canvas(
 <script>
 import Chart from 'chart.js';
 
+import {commonOptionParse} from '../../utils/option';
+
 export default {
   props: {
     width: {
@@ -45,7 +47,15 @@ export default {
     },
     responsive: {
       type: Boolean,
-      default: true
+      default: null
+    },
+    legend: {
+      coerce(val) {
+        if (typeof val === 'boolean') {
+          return {display: val};
+        }
+      },
+      default: null
     }
   },
   computed: {
@@ -57,7 +67,8 @@ export default {
     },
     chartOptions() {
       let options = {};
-      options.responsive = this.responsive;
+
+      options = commonOptionParse(this, options);
 
       return Object.assign({}, this.options, options);
     }
