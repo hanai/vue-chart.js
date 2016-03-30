@@ -1,7 +1,13 @@
 import Chart from 'chart.js';
 
 export default function(chartType) {
-  let chartClassName = `${chartType}-chart`;
+  if (process.env.NODE_ENV !== 'production') {
+    if (['bar', 'line', 'radar', 'pie', 'doughnut'].indexOf(chartType) === -1) {
+      console.warn(`vchart: unknown chartType: ${chartType}`);
+    }
+  }
+
+  const chartClassName = `${chartType}-chart`;
 
   let componentBaseOptions = {
     template: `<canvas class="vchart ${chartClassName}" v-el:chart-canvas :width="width" :height="height"></canvas>`,
@@ -50,16 +56,8 @@ export default function(chartType) {
         default: null
       }
     },
-    computed: {
-      chartData() {
-        return {
-          labels: this.labels,
-          datasets: this.datasets
-        };
-      },
-      chartOptions() {
-        let options = {};
-
+    methods: {
+      parseCommonOptions(options) {
         // responsive
         if (this.responsive !== null) {
           options.responsive = this.responsive;
@@ -70,7 +68,26 @@ export default function(chartType) {
           options.legend = this.legend;
         }
 
-        return Object.assign({}, this.options, options);
+        return options;
+      }
+    },
+    computed: {
+      chartData() {
+        return {
+          labels: this.labels,
+          datasets: this.datasets
+        };
+      },
+      chartOptions() {
+        let options = {};
+
+        options = this.parseCommonOptions(options);
+
+        if (this.parseCustomOptions) {
+          options = this.parseCustomOptions(options);
+        }
+
+        return Object.assign(this.options, options);
       }
     },
     watch: {
