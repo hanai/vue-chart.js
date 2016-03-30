@@ -48,7 +48,18 @@ module.exports = {
     ]
   },
   externals: {
-    'chart.js': 'Chart'
+    'chart.js': {
+      root: 'Chart',
+      commonjs: 'chart.js',
+      commonjs2: 'chart.js',
+      amd: 'chart.js'
+    },
+    'vue': {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    }
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
