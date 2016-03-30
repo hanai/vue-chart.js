@@ -92,11 +92,11 @@ export default function(chartType) {
     },
     watch: {
       datasets: {
+        // don't need deep
         handler(val, oldVal) {
           this.chartInstance.data.datasets = val;
           this.chartInstance.update();
-        },
-        deep: true
+        }
       }
     },
     data() {
