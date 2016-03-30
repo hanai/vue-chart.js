@@ -13,7 +13,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
   resolve: {
-    extensions: ['', '.js', '.vue']
+    extensions: ['', '.js']
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
@@ -21,11 +21,6 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.vue$/,
-        loader: 'eslint',
-        include: projectRoot,
-        exclude: /node_modules/
-      }, {
         test: /\.js$/,
         loader: 'eslint',
         include: projectRoot,
@@ -34,9 +29,6 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.vue$/,
-        loader: 'vue'
-      }, {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,
