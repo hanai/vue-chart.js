@@ -7,9 +7,6 @@ module.exports = {
     browser: true
   },
   extends: 'standard',
-  plugins: [
-    'html'
-  ],
   rules: {
     'arrow-parens': 0,
     semi: [2, 'always'],
