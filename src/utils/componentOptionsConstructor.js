@@ -110,6 +110,12 @@ export default function(chartType) {
           this.chartInstance.data.datasets = val;
           this.chartInstance.update();
         }
+      },
+      labels: {
+        handler(val, oldVal) {
+          this.chartInstance.config.data.labels = val;
+          this.chartInstance.update();
+        }
       }
     },
     data() {
