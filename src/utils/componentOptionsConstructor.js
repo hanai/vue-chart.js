@@ -54,6 +54,9 @@ export default function(chartType) {
           }
         },
         default: null
+      },
+      title: {
+        type: [String, Object]
       }
     },
     methods: {
@@ -66,6 +69,16 @@ export default function(chartType) {
         // legend
         if (this.legend !== null) {
           options.legend = this.legend;
+        }
+
+        // title
+        if (typeof this.title === 'string') {
+          options.title = {
+            text: this.title,
+            display: true
+          };
+        } else if (typeof this.title === 'object') {
+          options.title = this.title;
         }
 
         return options;

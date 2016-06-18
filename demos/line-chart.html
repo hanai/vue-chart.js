@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="app">
-  <line-chart :width="600" :height="300" :responsive="false" :labels="labels" :datasets="datasets" :options="options"></line-chart>
+  <line-chart :width="600" :height="300" :responsive="false" :labels="labels" :datasets="datasets" :options="options" title="Line Chart"></line-chart>
 </div>
 <script>
   var LineChart = vchart.LineChart;
@@ -61,9 +61,8 @@
       LineChart
     },
     ready() {
-      var self = this;
-      setTimeout(function () {
-        self.datasets = [{
+      setTimeout(() => {
+        this.datasets = [{
           label: "My First dataset",
 
           // The properties below allow an array to be specified to change the value of the item at the given index

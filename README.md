@@ -41,3 +41,10 @@ export default {
 }
 </script>
 ```
+
+## Common Chart Configuration
+
+| Name | Type | Default | Description |
+| responsive | Boolean | true | Resizes when the canvas container does |
+| title | String/Object | Title text/title configuration |
+
