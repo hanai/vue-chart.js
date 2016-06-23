@@ -1,6 +1,6 @@
 {
   "name": "vue-chart.js",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Chart.js for Vue",
   "main": "dist/vchart.js",
   "files": [
