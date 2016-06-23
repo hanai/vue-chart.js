@@ -51,6 +51,8 @@ export default function(chartType) {
         coerce(val) {
           if (typeof val === 'boolean') {
             return {display: val};
+          } else {
+            return val;
           }
         },
         default: null
