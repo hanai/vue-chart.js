@@ -13,7 +13,12 @@ module.exports = {
     libraryTarget: 'umd'
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
+    fallback: [path.join(__dirname, '../node_modules')],
+    alias: {
+      'src': path.resolve(__dirname, '../src'),
+      'components': path.resolve(__dirname, '../src/components')
+    }
   },
   resolveLoader: {
     fallback: [path.join(__dirname, '../node_modules')]
