@@ -1,5 +1,11 @@
 # vue-chart.js
 
+## Install
+
+``` bash
+# npm i vue-chart.js
+```
+
 ## Usage
 
 ``` html
