@@ -20,9 +20,6 @@ export default function(chartType) {
       },
       labels: {
         type: Array,
-        validator(value) {
-          return value.every(label => typeof label === 'string');
-        },
         default() { return []; }
       },
       datasets: {
