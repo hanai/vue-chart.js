@@ -158,10 +158,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    template: '<canvas class="vchart ' + chartClassName + '" v-el:chart-canvas :width="width" :height="height"></canvas>',
 	    props: {
 	      width: {
-	        type: Number
+	        type: Number,
+	        default: null
 	      },
 	      height: {
-	        type: Number
+	        type: Number,
+	        default: null
 	      },
 	      labels: {
 	        type: Array,

@@ -3,7 +3,7 @@
 ## Install
 
 ``` bash
-# npm i vue-chart.js
+$ npm i vue-chart.js
 ```
 
 ## Usage
@@ -54,3 +54,5 @@ export default {
 | --- | --- | --- | --- |
 | responsive | Boolean | true | Resizes when the canvas container does |
 | title | String/Object | null | Title text or title configuration |
+| width | Number | null | Width of canvas |
+| height | Number | null | Height of canvas |
