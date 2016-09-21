@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <title>Polar Area Chart</title>
+  <meta charset="utf-8">
+  <script src="./scripts/vue.js"></script>
+  <script src="./scripts/Chart.js"></script>
+  <script src="../dist/vchart.js"></script>
+</head>
+<body>
+<div id="app">
+  <polar-area-chart :width="600" :height="300" :responsive="false" :labels="labels" :datasets="datasets" :options="options" title="Polar Area Chart"></polar-area-chart>
+</div>
+<script>
+  var PolarAreaChart = vchart.PolarAreaChart;
+
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        labels: [
+          "Red",
+          "Green",
+          "Yellow",
+          "Grey",
+          "Blue"
+        ],
+        datasets: [
+          {
+            data: [11, 16, 7, 3, 14],
+            backgroundColor: [ "#FF6384", "#4BC0C0", "#FFCE56", "#E7E9ED", "#36A2EB" ],
+            label: 'My dataset'
+          }
+        ],
+        options: {}
+      }
+    },
+    components: {
+      PolarAreaChart
+    },
+    ready() {
+    }
+  });
+</script>
+</body>
+</html>

@@ -61,7 +61,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  LineChart: __webpack_require__(80),
 	  RadarChart: __webpack_require__(81),
 	  PieChart: __webpack_require__(82),
-	  DoughnutChart: __webpack_require__(83)
+	  DoughnutChart: __webpack_require__(83),
+	  PolarAreaChart: __webpack_require__(84)
 	};
 
 	module.exports = vchart;
@@ -147,7 +148,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	exports.default = function (chartType) {
 	  if (process.env.NODE_ENV !== 'production') {
-	    if (['bar', 'line', 'radar', 'pie', 'doughnut'].indexOf(chartType) === -1) {
+	    if (['bar', 'line', 'radar', 'pie', 'doughnut', 'polarArea'].indexOf(chartType) === -1) {
 	      console.warn('vchart: unknown chartType: ' + chartType);
 	    }
 	  }
@@ -195,7 +196,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      },
 	      responsive: {
 	        type: Boolean,
-	        default: null
+	        default: true
 	      },
 	      legend: {
 	        coerce: function coerce(val) {
@@ -281,6 +282,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        data: this.chartData,
 	        options: this.chartOptions
 	      });
+	    },
+	    beforeDestroy: function beforeDestroy() {
+	      this.chartInstance.destroy();
 	    }
 	  };
 
@@ -1922,6 +1926,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var componentOptions = (0, _componentOptionsConstructor2.default)('doughnut');
+
+	module.exports = _vue2.default.extend(componentOptions);
+
+/***/ },
+/* 84 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _vue = __webpack_require__(2);
+
+	var _vue2 = _interopRequireDefault(_vue);
+
+	var _componentOptionsConstructor = __webpack_require__(3);
+
+	var _componentOptionsConstructor2 = _interopRequireDefault(_componentOptionsConstructor);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var componentOptions = (0, _componentOptionsConstructor2.default)('polarArea');
 
 	module.exports = _vue2.default.extend(componentOptions);
 

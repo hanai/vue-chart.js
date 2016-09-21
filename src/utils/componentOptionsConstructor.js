@@ -2,7 +2,7 @@ import Chart from 'chart.js';
 
 export default function(chartType) {
   if (process.env.NODE_ENV !== 'production') {
-    if (['bar', 'line', 'radar', 'pie', 'doughnut'].indexOf(chartType) === -1) {
+    if (['bar', 'line', 'radar', 'pie', 'doughnut', 'polarArea'].indexOf(chartType) === -1) {
       console.warn(`vchart: unknown chartType: ${chartType}`);
     }
   }
@@ -28,9 +28,8 @@ export default function(chartType) {
         type: Array,
         validator(value) {
           return value.every(series => {
-            return Array.isArray(series.data) && series.data.every(val => {
-              return typeof val === 'number';
-            });
+            return Array.isArray(series.data) &&
+              series.data.every(val => typeof val === 'number');
           });
         },
         coerce(val) {
@@ -44,12 +43,12 @@ export default function(chartType) {
       },
       responsive: {
         type: Boolean,
-        default: null
+        default: true
       },
       legend: {
         coerce(val) {
           if (typeof val === 'boolean') {
-            return {display: val};
+            return { display: val };
           } else {
             return val;
           }
@@ -106,7 +105,6 @@ export default function(chartType) {
     },
     watch: {
       datasets: {
-        // don't need deep
         handler(val, oldVal) {
           this.chartInstance.data.datasets = val;
           this.chartInstance.update();
@@ -133,6 +131,9 @@ export default function(chartType) {
         data: this.chartData,
         options: this.chartOptions
       });
+    },
+    beforeDestroy() {
+      this.chartInstance.destroy();
     }
   };
 

@@ -3,7 +3,8 @@ const vchart = {
   LineChart: require('./components/LineChart'),
   RadarChart: require('./components/RadarChart'),
   PieChart: require('./components/PieChart'),
-  DoughnutChart: require('./components/DoughnutChart')
+  DoughnutChart: require('./components/DoughnutChart'),
+  PolarAreaChart: require('./components/PolarAreaChart')
 };
 
 module.exports = vchart;

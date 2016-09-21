@@ -12,7 +12,27 @@ Chart.js for Vue
 $ npm i vue-chart.js
 ```
 
-## Usage
+## Chart Components
+
+* BarChart
+* LineChart
+* RadarChart
+* PieChart
+* DoughnutChart
+* PolarAreaChart
+
+## Common Chart Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| responsive | Boolean | true | resizes when the canvas container does |
+| title | String | null | title text |
+| title | Object | null | title configuration |
+| width | Number | null | width of chart canvas |
+| height | Number | null | height of chart canvas |
+| labels | Array[string] | [] | labels of category axis |
+
+## Example
 
 ``` html
 <template>
@@ -53,15 +73,6 @@ export default {
 }
 </script>
 ```
-
-## Common Chart Configuration
-
-| Name | Type | Default | Description |
-| --- | --- | --- | --- |
-| responsive | Boolean | true | Resizes when the canvas container does |
-| title | String/Object | null | Title text or title configuration |
-| width | Number | null | Width of canvas |
-| height | Number | null | Height of canvas |
 
 
 [npm-image]: https://img.shields.io/npm/v/vue-chart.js.svg?style=flat-square
