@@ -1,5 +1,9 @@
 # vue-chart.js
 
+[![NPM version][npm-image]][npm-url]
+[![Dependency Status][david-image]][david-url]
+[![License][license-image]][license-url]
+
 ## Install
 
 ``` bash
@@ -56,3 +60,11 @@ export default {
 | title | String/Object | null | Title text or title configuration |
 | width | Number | null | Width of canvas |
 | height | Number | null | Height of canvas |
+
+
+[npm-image]: https://img.shields.io/npm/v/vue-chart.js.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/vue-chart.js
+[david-image]: http://img.shields.io/david/hanai/vue-chart.js.svg?style=flat-square
+[david-url]: https://david-dm.org/hanai/vue-chart.js
+[license-image]: http://img.shields.io/npm/l/vue-chart.js.svg?style=flat-square
+[license-url]: ./LICENSE
