@@ -37,7 +37,7 @@
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
     "webpack": "^1.12.14",
-    "vue": "^1.0.25"
+    "vue": "^1.0.26"
   },
   "dependencies": {
     "chart.js": "^2.2.2"

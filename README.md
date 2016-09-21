@@ -4,6 +4,8 @@
 [![Dependency Status][david-image]][david-url]
 [![License][license-image]][license-url]
 
+Chart.js for Vue
+
 ## Install
 
 ``` bash
